@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0ob6yeoddqim"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_4grn8"]
+[ext_resource type="FontFile" uid="uid://8ybt7y0koqfp" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="1_4xgmy"]
+[ext_resource type="Texture2D" uid="uid://bq0mueaea7u7t" path="res://Assets/Screenshot 2025-01-28 150935.png" id="1_aag40"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b8hep"]
+texture = ExtResource("1_aag40")
+modulate_color = Color(0.501407, 0.501406, 0.501406, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0v7g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yftyp"]
+bg_color = Color(0.699653, 0.699654, 0.699653, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1etcu"]
+bg_color = Color(0.446777, 0.446777, 0.446777, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5m31"]
+bg_color = Color(0.791999, 0.791999, 0.791999, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4grn8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_b8hep")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -49.0
+offset_right = 384.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_4xgmy")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l0v7g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yftyp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1etcu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w5m31")
+text = "Start Game"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -156.0
+offset_right = 92.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("1_4xgmy")
+theme_override_font_sizes/font_size = 64
+text = "Jumpy Knight"
+horizontal_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

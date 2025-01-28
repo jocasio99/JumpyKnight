@@ -1,2 +1,2 @@
 # JumpyKnight
-First simple platformer game
+First platformer game

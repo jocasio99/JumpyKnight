@@ -9,4 +9,6 @@ Controls:
 
 https://mrsocko.itch.io/jumpyknight Password is **firstgame**
 
-Update v0.7 1/28/2025: Movement, animations, killzones, enemies, coins, most of the map and coin counter are completed. It is playable (better not in fullscreen) but I need to fix how the game's ending works, how the death animation looks, and SECRET.
+Updates:
+- v0.8 Main Menu is completed, just need to make the ending and try to make the death look a bit better
+- v0.7 1/28/2025: Movement, animations, killzones, enemies, coins, most of the map and coin counter are completed. It is playable (better not in fullscreen) but I need to fix how the game's ending works, how the death animation looks, and SECRET.

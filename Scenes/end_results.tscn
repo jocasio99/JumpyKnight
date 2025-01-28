@@ -1,0 +1,124 @@
+[gd_scene load_steps=10 format=3 uid="uid://dedyh216emtue"]
+
+[ext_resource type="Script" path="res://Scripts/end_results.gd" id="1_jcjiq"]
+[ext_resource type="FontFile" uid="uid://8ybt7y0koqfp" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_e2yse"]
+[ext_resource type="Texture2D" uid="uid://bq0mueaea7u7t" path="res://Assets/Screenshot 2025-01-28 150935.png" id="2_ha5wt"]
+[ext_resource type="FontFile" uid="uid://cp1xbta1xcpk7" path="res://Assets/fonts/PixelOperator8.ttf" id="3_t3vim"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bs2x"]
+texture = ExtResource("2_ha5wt")
+modulate_color = Color(0.501407, 0.501406, 0.501406, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2oshv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0l1rb"]
+bg_color = Color(0.699653, 0.699654, 0.699653, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7aqo"]
+bg_color = Color(0.446777, 0.446777, 0.446777, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhws1"]
+bg_color = Color(0.791999, 0.791999, 0.791999, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[node name="EndResults" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jcjiq")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7bs2x")
+
+[node name="Thanks" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -310.0
+offset_right = 1.0
+offset_bottom = -179.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("2_e2yse")
+theme_override_font_sizes/font_size = 64
+text = "thank you for playing"
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -305.0
+offset_top = -141.0
+offset_right = 307.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_t3vim")
+theme_override_font_sizes/font_size = 16
+text = "Maybe next time you can find the secret ending..."
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -47.0
+offset_right = 384.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_e2yse")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2oshv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0l1rb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u7aqo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uhws1")
+text = "Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

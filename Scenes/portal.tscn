@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://w2k8t8oflv1l"]
+
+[ext_resource type="Script" path="res://Scripts/portal.gd" id="1_8ng80"]
+[ext_resource type="Texture2D" uid="uid://cjle0ou3ocj3" path="res://Assets/sprites/Dimensional_Portal.png" id="1_flvf2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssfnd"]
+atlas = ExtResource("1_flvf2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw52b"]
+atlas = ExtResource("1_flvf2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60wuy"]
+atlas = ExtResource("1_flvf2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuguw"]
+atlas = ExtResource("1_flvf2")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfsov"]
+atlas = ExtResource("1_flvf2")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn8au"]
+atlas = ExtResource("1_flvf2")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0qyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssfnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw52b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60wuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuguw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfsov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn8au")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjbrk"]
+size = Vector2(15, 30.8)
+
+[node name="Portal" type="Node2D"]
+texture_filter = 1
+rotation = 1.5708
+scale = Vector2(5, 5)
+script = ExtResource("1_8ng80")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o0qyb")
+autoplay = "default"
+frame_progress = 0.35528
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.700001, -7.45058e-08)
+shape = SubResource("RectangleShape2D_bjbrk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
